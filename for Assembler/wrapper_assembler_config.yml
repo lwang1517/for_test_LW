@@ -1,0 +1,33 @@
+output_folder: C:\Users\lwang.VM-WINDOWS-PACK\OneDrive - Biolinq Inc\Documents - Clinical Data Analysis\Data\Aggregate\new architecture eBlinq14 onwards\eBlinq22_integration
+processing_steps:
+  read_sensor_map: C:\Users\lwang.VM-WINDOWS-PACK\OneDrive - Biolinq Inc\Documents - Clinical Data Analysis\Data\Aggregate\new architecture eBlinq14 onwards\sensor_map_eBlinq22.xlsx
+  retrieve_clinical_data_using_sensor_map: # test null  
+  format_for_alginput:
+  convert_all_sensor_data_to_old_format:
+  save_to_pickle: data_cleaned.zip
+  # run_algorithm: /Users/liangwang/GitHub/DataAnalysis/Test_and_Doc/algorithm_analysis_configurations/v14h_2022.yaml
+  # load_data_pickle: C:\Users\lwang.VM-WINDOWS-PACK\OneDrive - Biolinq Inc\Documents - Clinical Data Analysis\Data\CP-008 Session 25 - Pre-Pivotal2\experimental\test new architecture v15 model no NN\data_cleaned.zip
+  run_algorithm_assembler:
+      algo_config_path: Blue Prints/sample_blue_prints.yaml
+      algo_config_type: map
+      items_to_save:      
+      - sample_df_csv
+      # - sample_df
+      # - report_df
+      - report_df_csv
+      - static_df_dict
+      # - commercial
+      - commercial_csv
+      # - customized
+  # save_to_pickle_alg_out: alg_out_no_excel.zip
+  pair_and_create_excel_report:
+    settings_file: evaluation_settings_v02.yaml
+  save_to_pickle_excel: alg_out.zip
+  generate_plots:
+    settings_file: plot_settings_v01.yaml
+    plots_to_create:
+      clean_alg_output:
+      glucose_for_slide:
+    plots:
+      general_plot_settings:
+        add_mard_to_title: true       

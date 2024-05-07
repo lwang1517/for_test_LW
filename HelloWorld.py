@@ -9,7 +9,6 @@ print("Hellow World")
 
 # %%
 
-@profile
 def add_or_subtract(n1, n2, subtract=False):
     if subtract:
         return n1 - n2
